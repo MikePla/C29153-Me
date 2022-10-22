@@ -39,5 +39,4 @@ while restart1 == 1:
         print('Неверное условие')
         restart1 = 1
 print("Пока")
-input()
-exit()
+
