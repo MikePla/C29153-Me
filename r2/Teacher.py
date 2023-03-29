@@ -1,10 +1,10 @@
-class Student:
+class Teacher:
     name = ''
-    helth = 100
+    helth = 200
     damage = 1
     defense = 0
 
-    def __init__(self, name='', helth=100, damage=1, defense=0):
+    def __init__(self, name='', helth=200, damage=1, defense=0):
         self.name = name
         self.helth = helth
         self.damage = damage
@@ -17,7 +17,11 @@ class Student:
                f'Defense: {self.defense}'
 
     def take_damage(self, damage=0):
-        self.helth -= max(damage, 0)
+        # self.helth -= max(damage, 0)
+        self.helth = max(self.helth - max(damage, 0), 0)
 
-    def attack(self, target ):
+    def attack(self, target):
         target.take_damage(self.damage)
+
+    def is_alive(self):
+        return self.helth >= 0
